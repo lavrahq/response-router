@@ -1,0 +1,12 @@
+{$HOST}:{$PORT}
+
+proxy /api/graphql {$RESPONSE_DATA_URL}/v1/graphql {
+    without /api/graphql
+    websocket
+}
+
+proxy /api/auth {$RESPONSE_AUTH_URL} {
+    without /api/auth
+}
+
+proxy /api {$RESPONSE_API_URL}
